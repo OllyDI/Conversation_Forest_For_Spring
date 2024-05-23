@@ -54,6 +54,7 @@ public class memberController {
                 Cookie cookie = new Cookie("cookie", form.getEmail());
                 cookie.setMaxAge(24 * 30 * 60 * 60 * 1000); //30일간 저장
                 response.addCookie(cookie);
+
             } else {
                 Cookie cookie = new Cookie("cookie", "");
                 cookie.setMaxAge(0);
@@ -63,10 +64,12 @@ public class memberController {
             HttpSession session = request.getSession();
             session.setAttribute("session", member);
             return "redirect:/"; // 로그인 후 이동할 페이지를 지정합니다.
+
         } else {
             // 로그인 실패 시 에러 메시지를 전달합니다.
             redirectAttributes.addFlashAttribute("msg", "아이디 또는 비밀번호가 일치하지 않습니다.");
             return "redirect:/login"; // 로그인 실패 시 다시 로그인 페이지로 이동합니다.
+
         }
     }
 
