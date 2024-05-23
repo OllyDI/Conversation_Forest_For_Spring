@@ -21,8 +21,9 @@
     <h4> ○ 양지원 https://github.com/dwd0258</h4>
     <br></br>
     <h3>□ 목적 및 필요성</h3>
-    <h4> ○ 목적이 같은 사람들끼리의 소통??</h4>
-    <h4> ○ </h4>
+    <h4> ○ 관심사 및 취미가 같은 사람들끼리 모여 원활한 커뮤니케이션이 가능함</h4>
+    <h4> ○ 게임 커뮤니티를 위한 플랫폼으로 활용하여 같은 게임을 하는 사람들끼리 서로 소통하고 협력하여 게임을 보다 즐길 수 있게 함</h4>
+    <h4> ○ 업무적으로도 활용하여 실시간 채팅 및 게시판을 이용하여 프로젝트 관리를 할 수 있음</h4>
     <br></br>
     <h3>□ 프로젝트 기간 : 약 1개월 (2024.04 ~ )</h3>
     <h4> ○ 4월 중으로 설계 완료 후 개발 시작</h4>
@@ -61,4 +62,8 @@
     <img src="https://github.com/OllyDI/Conversation_Forest/assets/71002104/4a781b80-3cb2-42c6-9032-0f4d8b2c06fe">
     <h3>□ 시퀀스 다이어그램</h3>
     <img src="https://github.com/OllyDI/Conversation_Forest/assets/71002104/2619cf36-6238-4693-99d5-dffd2540d407">
+    <h3>□ DB ER다이어그램</h3>
+    <img src="https://github.com/OllyDI/Conversation_Forest/assets/83630075/27109373-df00-488b-a045-3085ef36644b">
+    <h3>□ DB 모델</h3>
+    <img src="https://github.com/OllyDI/Conversation_Forest/assets/71002104/02b37560-c152-4fad-ac91-96f09eba2a95">
 </div>
