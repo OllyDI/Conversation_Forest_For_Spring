@@ -88,7 +88,7 @@ public class memberController {
     }
 
 
-    @PostMapping("duplicate")
+    @PostMapping("/duplicate")
     public ResponseEntity<Boolean> duplicate(@RequestParam("email") String email) {
         Member member = new Member();
         member.setEmail(email);
