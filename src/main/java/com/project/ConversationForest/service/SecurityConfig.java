@@ -14,7 +14,7 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 
 @Configuration
 @EnableWebSecurity
-//@EnableMethodSecurity
+@EnableMethodSecurity
 public class SecurityConfig {
 
     @Bean
@@ -22,9 +22,9 @@ public class SecurityConfig {
         http    .csrf(AbstractHttpConfigurer::disable)
                 .cors(AbstractHttpConfigurer::disable)
                 .httpBasic(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests((auth) -> auth
-                        .requestMatchers("/", "/login", "/register", "/session_login", "/livereload", "/css/**", "/js/**", "/plugins/**")
-                        .permitAll().anyRequest().authenticated())
+//                .authorizeHttpRequests((auth) -> auth
+//                        .requestMatchers("/", "/login", "/register", "/session_login", "/livereload", "/css/**", "/js/**", "/plugins/**")
+//                        .permitAll().anyRequest().authenticated())
 //				.formLogin(formLogin -> formLogin
 //						.loginPage("/login")
 //                        .loginProcessingUrl("/session_login")
