@@ -14,7 +14,7 @@ public class BootstrapController {
     @GetMapping("/")
     public String home(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
-        System.out.println(session);
+
         if (session == null) return "members/login";
         else return "index";
     }
