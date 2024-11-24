@@ -42,7 +42,6 @@ public class memberController {
     }
 
     @PostMapping("session_login")
-
     public String sesionLogin(MemberForm form, HttpServletRequest request, RedirectAttributes redirectAttributes, HttpServletResponse response) {
         Optional<Member> member = memberService.findUser(form.getEmail());
 
@@ -72,6 +71,13 @@ public class memberController {
 
         }
     }
+
+    @PostMapping("session_logout")
+    public String sessionLogout(HttpSession session) throws Exception {
+        session.invalidate();
+        return "redirect:/login";
+    }
+
 
     @GetMapping("register")
     public String registerUser() {
