@@ -65,7 +65,7 @@
                 </div>
             </div>
 
-            <a href="#" onclick="javascript:logout()" class="nav_link"> <i class='bx bx-log-out nav_icon'></i>
+            <a href="#" onclick="logout()" class="nav_link"> <i class='bx bx-log-out nav_icon'></i>
                 <span class="nav_name">SignOut</span>
             </a>
         </nav>
@@ -78,5 +78,14 @@
 <script src="https://kit.fontawesome.com/57c8b4e229.js"></script>
 <script src="dist/js/adminlte.js"></script>
 <script src="js/sidebar.js"></script>
+<script>
+    function logout() {
+        var f = document.createElement('form');
+        f.setAttribute('method', 'post');
+        f.setAttribute('action', '/session_logout');
+        document.body.appendChild(f);
+        f.submit();
+    }
+</script>
 </body>
 </html>
