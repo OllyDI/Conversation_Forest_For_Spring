@@ -25,7 +25,7 @@ bin/
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
-application.properties
+
 
 ### NetBeans ###
 /nbproject/private/
@@ -36,3 +36,8 @@ application.properties
 
 ### VS Code ###
 .vscode/
+
+application.properties
+src/main/java/com/project/ConversationForest/service/MailConfig.java
+MailConfig.java
+MailConfig
