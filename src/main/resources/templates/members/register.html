@@ -23,11 +23,16 @@
             <form action="register" name="userRegister" method="post">
                 <div class="mb-3">
                     <div class="input-group">
+                        <input type="text" name="name" id="userName" class="form-control" placeholder="닉네임"
+                               required oninvalid="this.setCustomValidity('닉네임을 확인하세요.')" oninput="this.setCustomValidity('')">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="input-group">
                         <input type="email" name="email" id="email" class="form-control" placeholder="이메일"
                                required oninvalid="this.setCustomValidity('아이디를 확인하세요.')" oninput="this.setCustomValidity('')">
-                        <div class="input-group-text">
-                            <span class="fas fa-envelope"></span>
-                        </div>
+                        <button type="button" class="btn btn-success" id="auth" onclick="sendmail()">인증</button>
                     </div>
                 </div>
 
@@ -35,19 +40,6 @@
                     <div class="input-group">
                         <input type="password" name="pw" id="pw" class="form-control" placeholder="비밀번호"
                                required oninvalid="this.setCustomValidity('비밀번호를 확인하세요.')" oninput="this.setCustomValidity('')">
-                        <div class="input-group-text">
-                            <span class="fas fa-lock"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mb-3">
-                    <div class="input-group">
-                        <input type="text" name="name" id="userName" class="form-control" placeholder="닉네임"
-                               required oninvalid="this.setCustomValidity('닉네임을 확인하세요.')" oninput="this.setCustomValidity('')">
-                        <div class="input-group-text">
-                            <span class="fas fa-address-card"></span>
-                        </div>
                     </div>
                 </div>
                 <!-- /.col -->
@@ -82,28 +74,40 @@
     if (msg != null) alert(msg);
 </script>
 <script>
-    $(document).ready(function () {
-        $("#email").on("focusout", function (e) {
-            var id = $("#email").val();
-            if (id == '' || id.length == 0) { return false; }
+    function sendmail() {
+        let e = $("#email").val();
+        email_regex = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-za-z0-9\-]+/;;
+        if(!email_regex.test(e)) {
+            alert('이메일 형식이 올바르지 않습니다.');
+            return;
+        }
 
-            //Ajax로 전송
-            axios({
-                url: '/duplicate',
-                method: 'POST',
-                data: {
-                    email: id
-                },
-            }).then(function(data) {
-                if (data.data == false) {
-                    alert("중복된 아이디입니다.");
-                    $("#reg").attr("type", "button");
-                } else {
-                    $("#reg").attr("type", "submit");
-                }
-            });
-        });
-    })
+        axios({
+            url: '/duplicate',
+            method: 'post',
+            data: {
+                email: e,
+            },
+        }).then(function(data) {
+            console.log(data);
+            if (data.data) {
+                axios({
+                    url: '/sendMail',
+                    method: 'post',
+                    data: {
+                        email: e
+                    },
+                }).then(function(data) {
+                    console.log(data);
+                    // alert(data.data.msg);
+                    // number = data.data.key;
+                    // $("#valid_div").attr("hidden", false);
+                    // if (data.data.ok) $("#mail_button").attr('disabled', false);
+                })
+            }
+            else alert('사용할 수 없는 아이디입니다.');
+        })
+    }
 </script>
 </body>
 </html>

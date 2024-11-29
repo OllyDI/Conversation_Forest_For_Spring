@@ -95,11 +95,10 @@ public class memberController {
 
 
     @PostMapping("/duplicate")
-    public ResponseEntity<Boolean> duplicate(@RequestParam("email") String email) {
+    public ResponseEntity<Boolean> duplicate(@RequestBody String email) {
         Member member = new Member();
         member.setEmail(email);
         boolean res = true;
-
         if (email.trim().isEmpty()) {
             res = false;
         }
