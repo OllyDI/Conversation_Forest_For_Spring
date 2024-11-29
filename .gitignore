@@ -39,3 +39,5 @@ out/
 
 application.properties
 src/main/java/com/project/ConversationForest/service/MailConfig.java
+MailConfig.java
+MailConfig
