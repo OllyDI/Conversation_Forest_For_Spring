@@ -10,12 +10,6 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 @Configuration
 public class MailConfig {
 
-    private static int number;
-
-    public static void createNumber() {
-        number = (int) (Math.random() * (90000)) + 100000; //(int) Math.random() * (최댓값-최소값+1) + 최소값
-    }
-
     public class Config {
         @Bean
         public JavaMailSender javaMailSender() {
