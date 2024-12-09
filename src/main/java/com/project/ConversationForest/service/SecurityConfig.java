@@ -21,20 +21,20 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http    .csrf(AbstractHttpConfigurer::disable)
                 .cors(AbstractHttpConfigurer::disable)
-                .httpBasic(AbstractHttpConfigurer::disable)
-//                .authorizeHttpRequests((auth) -> auth
-//                        .requestMatchers("/", "/login", "/register", "/session_login", "/livereload", "/css/**", "/js/**", "/plugins/**")
-//                        .permitAll().anyRequest().authenticated())
-//				.formLogin(formLogin -> formLogin
-//						.loginPage("/login")
-//                        .loginProcessingUrl("/session_login")
-//						.defaultSuccessUrl("/"))
-                .logout((logout) -> logout
-                        .logoutSuccessUrl("/login")
-                        .invalidateHttpSession(true))
-                .sessionManagement(session -> session
-                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                );
+                .httpBasic(AbstractHttpConfigurer::disable);
+////                .authorizeHttpRequests((auth) -> auth
+////                        .requestMatchers("/", "/login", "/register", "/session_login", "/livereload", "/css/**", "/js/**", "/plugins/**")
+////                        .permitAll().anyRequest().authenticated())
+////				.formLogin(formLogin -> formLogin
+////						.loginPage("/login")
+////                        .loginProcessingUrl("/session_login")
+////						.defaultSuccessUrl("/"))
+//                .logout((logout) -> logout
+//                        .logoutSuccessUrl("/login")
+//                        .invalidateHttpSession(true))
+//                .sessionManagement(session -> session
+//                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+//                );
         return http.build();
     }
 
