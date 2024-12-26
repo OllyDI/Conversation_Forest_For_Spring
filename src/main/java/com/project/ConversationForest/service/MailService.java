@@ -34,10 +34,8 @@ public class MailService {
                                         
                     <body>
                     <div style="margin:100px;">
-                        <h1> 테스트 메일 </h1>
-                        <br>
-                                        
-                                        
+                        <h1> 메일 인증 메시지입니다. </h1>
+                        <br>         
                         <div align="center" style="border:1px solid black;">
                             <h3> 테스트 메일 내용 </h3>
                         </div>
